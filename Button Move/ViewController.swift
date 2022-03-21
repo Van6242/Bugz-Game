@@ -15,15 +15,20 @@ class ViewController: UIViewController
     var timer = Timer()
     var speed = 1.0
     var Button1a = [UIButton]()
+    var crash = 0
     var image: UIImage = UIImage(named: "bug1")!
-    
+  
     @IBOutlet weak var llose: UILabel!
     override func viewDidLoad()
     {
-        
+    
+
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+        
+        
         lable = UILabel(frame: CGRect(x: 200, y: 50, width: 100, height: 50))
         lable.textColor = UIColor.black
         lable.text = "\(counter)"
@@ -39,6 +44,7 @@ class ViewController: UIViewController
         counter = 0
         bcount = 0
         speed = 1.0
+        crash = 0
         view.addSubview(lable)
         view.addSubview(llose)
         lable.text = "\(counter)"
@@ -71,6 +77,15 @@ class ViewController: UIViewController
         Button1.setImage(image, for: UIControl.State.normal)
         view.addSubview(Button1)
         Button1.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+       
+        //animation
+        UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
+            Button1
+        }, completion: nil)
+        
+        
+        
+        
     }
     @objc func fireTimer() {
         createButton()
@@ -105,15 +120,21 @@ class ViewController: UIViewController
             timer.invalidate()
             self.llose.alpha = 1
             self.llose.bringSubviewToFront(self.llose)
-            let Button2 = UIButton (frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+            let Button2 = UIButton (frame: CGRect(x: 155, y: 500, width: 100, height: 100))
             Button2.setTitle("reset", for: .normal)
             Button2.backgroundColor = UIColor.red
             view.addSubview(Button2)
             Button2.addTarget(self, action: #selector(restbutton), for: .touchUpInside)
             for btn in Button1a
             {
+                crash += 1
                 btn.removeFromSuperview()
                 print("f")
+               
+                if crash == 100 {
+                   break
+                }
+                
             }
         }
     }
