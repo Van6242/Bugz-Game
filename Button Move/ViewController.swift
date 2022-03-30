@@ -46,9 +46,8 @@ class ViewController: UIViewController
         speed = 1.0
         crash = 0
         view.addSubview(lable)
-        view.addSubview(llose)
         lable.text = "\(counter)"
-        llose.alpha = 0
+
         createButton()
         timer = Timer.scheduledTimer(timeInterval: speed, target: self, selector: #selector(rescheduleTimer), userInfo: nil, repeats: true)
        }
@@ -93,6 +92,16 @@ class ViewController: UIViewController
         print(speed)
     }
     
+    func finalscore() {
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if (segue.identifier == "gameOverSegue")
+            {
+                let scoreseg = segue.destination as! Gameover
+                scoreseg.scoresave = counter
+            }
+    }
+    }
+    
     @objc func rescheduleTimer()
     {
         self.bcount += 1
@@ -118,13 +127,13 @@ class ViewController: UIViewController
         if self.bcount > 5
         {
             timer.invalidate()
-            self.llose.alpha = 1
-            self.llose.bringSubviewToFront(self.llose)
-            let Button2 = UIButton (frame: CGRect(x: 155, y: 500, width: 100, height: 100))
-            Button2.setTitle("reset", for: .normal)
-            Button2.backgroundColor = UIColor.red
-            view.addSubview(Button2)
-            Button2.addTarget(self, action: #selector(restbutton), for: .touchUpInside)
+//            self.llose.alpha = 1
+//            self.llose.bringSubviewToFront(self.llose)
+//            let Button2 = UIButton (frame: CGRect(x: 155, y: 500, width: 100, height: 100))
+//            Button2.setTitle("reset", for: .normal)
+//            Button2.backgroundColor = UIColor.red
+//            view.addSubview(Button2)
+//            Button2.addTarget(self, action: #selector(restbutton), for: .touchUpInside)
             for btn in Button1a
             {
                 crash += 1
@@ -134,6 +143,10 @@ class ViewController: UIViewController
                 if crash == 100 {
                    break
                 }
+               
+                performSegue(withIdentifier: "gameOverSegue", sender: self)
+                break
+                
                 
             }
         }

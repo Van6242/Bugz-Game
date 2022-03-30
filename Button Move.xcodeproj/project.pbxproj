@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE7F1E1327ECE54900560193 /* Mainscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F1E1227ECE54900560193 /* Mainscreen.swift */; };
+		AE7F1E1627ECE8AB00560193 /* Gameover.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F1E1527ECE8AB00560193 /* Gameover.swift */; };
 		AE99E18D27CE699D00C14F8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99E18C27CE699D00C14F8A /* AppDelegate.swift */; };
 		AE99E18F27CE699D00C14F8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99E18E27CE699D00C14F8A /* SceneDelegate.swift */; };
 		AE99E19127CE699D00C14F8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99E19027CE699D00C14F8A /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE7F1E1227ECE54900560193 /* Mainscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mainscreen.swift; sourceTree = "<group>"; };
+		AE7F1E1527ECE8AB00560193 /* Gameover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameover.swift; sourceTree = "<group>"; };
 		AE99E18927CE699D00C14F8A /* Button Move.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Button Move.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE99E18C27CE699D00C14F8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE99E18E27CE699D00C14F8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				AE99E18E27CE699D00C14F8A /* SceneDelegate.swift */,
 				AE99E19027CE699D00C14F8A /* ViewController.swift */,
 				AE99E19227CE699D00C14F8A /* Main.storyboard */,
+				AE7F1E1527ECE8AB00560193 /* Gameover.swift */,
+				AE7F1E1227ECE54900560193 /* Mainscreen.swift */,
 				AE99E19527CE69A000C14F8A /* Assets.xcassets */,
 				AE99E19727CE69A000C14F8A /* LaunchScreen.storyboard */,
 				AE99E19A27CE69A000C14F8A /* Info.plist */,
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE7F1E1327ECE54900560193 /* Mainscreen.swift in Sources */,
+				AE7F1E1627ECE8AB00560193 /* Gameover.swift in Sources */,
 				AE99E19127CE699D00C14F8A /* ViewController.swift in Sources */,
 				AE99E18D27CE699D00C14F8A /* AppDelegate.swift in Sources */,
 				AE99E18F27CE699D00C14F8A /* SceneDelegate.swift in Sources */,
@@ -220,6 +228,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -274,6 +283,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -287,6 +297,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UUXZU4R3LC;
 				INFOPLIST_FILE = "Button Move/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,6 +316,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UUXZU4R3LC;
 				INFOPLIST_FILE = "Button Move/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
