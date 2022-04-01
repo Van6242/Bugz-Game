@@ -34,8 +34,20 @@ class ViewController: UIViewController
         lable.text = "\(counter)"
         view.addSubview(lable)
         
-        startGame()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        for view in view.subviews
+        {
+            if view.tag == 3
+            {
+                view.removeFromSuperview()
+            }
+        }
+    
+        startGame()
     }
     
     func startGame()
@@ -76,11 +88,9 @@ class ViewController: UIViewController
         Button1.setImage(image, for: UIControl.State.normal)
         view.addSubview(Button1)
         Button1.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-       
+        Button1.tag = 3
         //animation
-        UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
-            Button1
-        }, completion: nil)
+      
         
         
         
@@ -92,15 +102,10 @@ class ViewController: UIViewController
         print(speed)
     }
     
-    func finalscore() {
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if (segue.identifier == "gameOverSegue")
-            {
-                let scoreseg = segue.destination as! Gameover
-                scoreseg.scoresave = counter
-            }
-    }
-    }
+       
+   
+      
+   
     
     @objc func rescheduleTimer()
     {
@@ -144,6 +149,8 @@ class ViewController: UIViewController
                    break
                 }
                
+                
+
                 performSegue(withIdentifier: "gameOverSegue", sender: self)
                 break
                 
@@ -151,4 +158,12 @@ class ViewController: UIViewController
             }
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if (segue.identifier == "gameOverSegue")
+            {
+                let scoreseg = segue.destination as! Gameover
+                scoreseg.scoresave = counter
+            }
+    }
 }
+

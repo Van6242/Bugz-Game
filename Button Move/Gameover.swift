@@ -9,7 +9,7 @@ import UIKit
 
 class Gameover: UIViewController {
     @IBOutlet weak var scoreLable: UILabel!
-    var scoresave = 0
+    var scoresave = 2
     override func viewDidLoad() {
         super.viewDidLoad()
       //this is were you left off
@@ -22,10 +22,10 @@ class Gameover: UIViewController {
         print(1)
         self.navigationController?.popToRootViewController(animated: true)
     }
-//    @IBAction func resetbtn(_ sender: Any)
-//    {
-//        self.navigationController?.popToViewController(UIViewController: named"ViewController", animated: true)
-//    }
+    @IBAction func resetbtn(_ sender: Any)
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
     
