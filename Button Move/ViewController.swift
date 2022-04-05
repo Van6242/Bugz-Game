@@ -81,7 +81,7 @@ class ViewController: UIViewController
     @objc func createButton()
     {
         let randx = CGFloat.random(in: 0...UIScreen.main.bounds.width-100)
-        let randy = CGFloat.random(in: 0...UIScreen.main.bounds.height-25)
+        let randy = CGFloat.random(in: 0...UIScreen.main.bounds.height-100)
         var Button1 = UIButton (frame: CGRect(x: randx, y: randy, width: 100, height: 100))
         self.Button1a.append(Button1)
         Button1.setTitle("press me", for: .normal)
@@ -109,7 +109,12 @@ class ViewController: UIViewController
     
     @objc func rescheduleTimer()
     {
+        
+
+        
+        
         self.bcount += 1
+        print(bcount)
         self.createButton()
         if counter > 5
         {
@@ -129,7 +134,7 @@ class ViewController: UIViewController
             speed = 0.25
             timer = Timer.scheduledTimer(timeInterval: speed, target: self, selector: #selector(rescheduleTimer), userInfo: nil, repeats: true)
         }
-        if self.bcount > 5
+        if self.bcount == 5
         {
             timer.invalidate()
 //            self.llose.alpha = 1
@@ -150,7 +155,7 @@ class ViewController: UIViewController
                 }
                
                 
-
+print(bcount)
                 performSegue(withIdentifier: "gameOverSegue", sender: self)
                 break
                 
