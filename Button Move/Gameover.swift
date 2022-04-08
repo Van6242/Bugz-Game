@@ -9,11 +9,16 @@ import UIKit
 
 class Gameover: UIViewController {
     @IBOutlet weak var scoreLable: UILabel!
+    @IBOutlet weak var high: UILabel!
     var scoresave = 2
+    var scorehighest = 3
     override func viewDidLoad() {
         super.viewDidLoad()
       //this is were you left off
         scoreLable.text = "\(scoresave)"
+
+        loadFromUserDefaults()
+        high.text = "\(scorehighest)"
         // Do any additional setup after loading the view.
     }
     
@@ -25,6 +30,12 @@ class Gameover: UIViewController {
     @IBAction func resetbtn(_ sender: Any)
     {
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    func loadFromUserDefaults()
+    {
+        let defaults = UserDefaults.standard
+        scorehighest = defaults.integer(forKey: "finaly")
     }
     
     

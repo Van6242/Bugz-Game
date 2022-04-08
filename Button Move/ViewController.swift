@@ -17,11 +17,10 @@ class ViewController: UIViewController
     var Button1a = [UIButton]()
     var crash = 0
     var image: UIImage = UIImage(named: "bug1")!
-  
+    var highscore = 0
     @IBOutlet weak var llose: UILabel!
     override func viewDidLoad()
     {
-    
 
         
         super.viewDidLoad()
@@ -33,7 +32,7 @@ class ViewController: UIViewController
         lable.textColor = UIColor.black
         lable.text = "\(counter)"
         view.addSubview(lable)
-        
+        loadFromUserDefaults()
         
     }
     
@@ -156,11 +155,20 @@ class ViewController: UIViewController
                
                 
 print(bcount)
-                performSegue(withIdentifier: "gameOverSegue", sender: self)
+                
                 break
                 
                 
             }
+           
+           
+            if counter >= highscore
+       {
+        highscore = counter
+       saveFromUserDefaults()
+        
+       }
+            performSegue(withIdentifier: "gameOverSegue", sender: self)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -170,5 +178,31 @@ print(bcount)
                 scoreseg.scoresave = counter
             }
     }
+    
+    
+    func loadFromUserDefaults(){
+        let defaults = UserDefaults.standard
+        highscore = defaults.integer(forKey: "finaly")
+        
+    }
+    
+    
+    func saveFromUserDefaults(){
+        let defaults = UserDefaults.standard
+        defaults.setValue(highscore, forKey: "finaly")
+    }
+    
+    
+    
+//    func saveToUserDefaults()
+//    {
+//        defaults.setValue(highscore, forKey: "finaly")
+//    }
+//
+//    func loadFromUserDefaults()
+//    {
+//        let finaly = defaults.integer(forKey: "finaly")//look at this
+//    }
 }
 
+//user defaults for high score
