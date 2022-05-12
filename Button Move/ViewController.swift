@@ -28,12 +28,15 @@ class ViewController: UIViewController
 
         
         
-        lable = UILabel(frame: CGRect(x: 200, y: 50, width: 100, height: 50))
+//        lable = UILabel(frame: CGRect(x: 200, y: 50, width: 100, height: 50))
+        lable.translatesAutoresizingMaskIntoConstraints = false
+        lable.adjustsFontSizeToFitWidth = false
+        lable.font = UIFont.systemFont(ofSize: 40.0)
         lable.textColor = UIColor.black
         lable.text = "\(counter)"
         view.addSubview(lable)
         loadFromUserDefaults()
-        
+        addconst()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -190,6 +193,17 @@ print(bcount)
     func saveFromUserDefaults(){
         let defaults = UserDefaults.standard
         defaults.setValue(highscore, forKey: "finaly")
+    }
+    func addconst()
+    {
+        var constr = [NSLayoutConstraint]()
+//        constr.append(lable.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100))
+//        constr.append(lable.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 100))
+//        constr.append(lable.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor))
+        constr.append(lable.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor))
+        constr.append(lable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50))
+//        constr.append(lable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 100))
+        NSLayoutConstraint.activate(constr)
     }
     
     
