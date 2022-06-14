@@ -93,7 +93,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When bugs appear on screen, tap to get rid of them. Watch out, if to many bugs appear then the game will end!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-es-ads">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When bugs appear on screen, tap to get rid of them. Watch out, if too many bugs appear then the game will end!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-es-ads">
                                 <rect key="frame" x="20" y="94" width="374" height="718"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -148,7 +148,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GWS-hU-BsD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GWS-hU-BsD" firstAttribute="bottom" secondItem="EKS-SY-9Cq" secondAttribute="bottom" id="ASP-A9-PYt"/>
                             <constraint firstItem="GWS-hU-BsD" firstAttribute="trailing" secondItem="EKS-SY-9Cq" secondAttribute="trailing" id="BWR-X1-dQd"/>
@@ -237,10 +237,13 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="BNs-2q-kMk" firstAttribute="top" secondItem="zea-Fu-Vha" secondAttribute="top" constant="10" id="deH-Si-Lgw"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ATw-IA-viF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ATw-IA-viF" firstAttribute="bottom" secondItem="zea-Fu-Vha" secondAttribute="bottom" id="14Z-kf-Kcj"/>
                             <constraint firstItem="zea-Fu-Vha" firstAttribute="trailing" secondItem="ATw-IA-viF" secondAttribute="trailing" id="9cU-V6-slW"/>
