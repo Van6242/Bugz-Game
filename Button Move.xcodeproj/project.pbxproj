@@ -16,6 +16,8 @@
 		AE99E19627CE69A000C14F8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE99E19527CE69A000C14F8A /* Assets.xcassets */; };
 		AE99E19927CE69A000C14F8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE99E19727CE69A000C14F8A /* LaunchScreen.storyboard */; };
 		AECB9982283D1E84005E7B81 /* directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB9981283D1E84005E7B81 /* directions.swift */; };
+		AECB999428577F24005E7B81 /* HardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB999328577F23005E7B81 /* HardController.swift */; };
+		AECB99982858C822005E7B81 /* HardLose.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB99972858C821005E7B81 /* HardLose.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		AE99E19827CE69A000C14F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE99E19A27CE69A000C14F8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AECB9981283D1E84005E7B81 /* directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = directions.swift; sourceTree = "<group>"; };
+		AECB999328577F23005E7B81 /* HardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardController.swift; sourceTree = "<group>"; };
+		AECB99972858C821005E7B81 /* HardLose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardLose.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				AE99E18C27CE699D00C14F8A /* AppDelegate.swift */,
 				AE99E18E27CE699D00C14F8A /* SceneDelegate.swift */,
 				AE99E19027CE699D00C14F8A /* ViewController.swift */,
+				AECB999328577F23005E7B81 /* HardController.swift */,
+				AECB99972858C821005E7B81 /* HardLose.swift */,
 				AE99E19227CE699D00C14F8A /* Main.storyboard */,
 				AECB9981283D1E84005E7B81 /* directions.swift */,
 				AE7F1E1527ECE8AB00560193 /* Gameover.swift */,
@@ -149,7 +155,9 @@
 				AE7F1E1327ECE54900560193 /* Mainscreen.swift in Sources */,
 				AE7F1E1627ECE8AB00560193 /* Gameover.swift in Sources */,
 				AE99E19127CE699D00C14F8A /* ViewController.swift in Sources */,
+				AECB99982858C822005E7B81 /* HardLose.swift in Sources */,
 				AE99E18D27CE699D00C14F8A /* AppDelegate.swift in Sources */,
+				AECB999428577F24005E7B81 /* HardController.swift in Sources */,
 				AE99E18F27CE699D00C14F8A /* SceneDelegate.swift in Sources */,
 				AECB9982283D1E84005E7B81 /* directions.swift in Sources */,
 			);

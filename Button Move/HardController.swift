@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  HardController.swift
 //  Button Move
 //
-//  Created by  on 3/1/22.
+//  Created by  on 6/13/22.
 //
 
 import UIKit
 
-class ViewController: UIViewController
+class HardController: UIViewController
 {
     var lable = UILabel()
     var counter = 0
@@ -17,8 +17,9 @@ class ViewController: UIViewController
     var Button1a = [UIButton]()
     var crash = 0
     var image: UIImage = UIImage(named: "bug1")!
-    var highscore = 0
-    @IBOutlet weak var llose: UILabel!
+    var highscore2 = 0
+   
+  
     override func viewDidLoad()
     {
 
@@ -98,6 +99,43 @@ class ViewController: UIViewController
         
         
     }
+    
+    @IBAction func hardbackbtn(_ sender: Any) {
+            timer.invalidate()
+
+            for btn in Button1a
+            {
+                crash += 1
+                btn.removeFromSuperview()
+                print("f")
+               
+                if crash == 100 {
+                   break
+                }
+               
+                
+print(bcount)
+                
+                break
+                
+                
+            }
+           
+           
+            if counter >= highscore2
+       {
+        highscore2 = counter
+       saveFromUserDefaults()
+        
+       }
+            performSegue(withIdentifier: "gameOverSegue2", sender: self)
+        }
+    
+    
+    
+    
+    
+    
     @objc func fireTimer() {
         createButton()
         bcount += 1
@@ -136,16 +174,16 @@ class ViewController: UIViewController
             speed = 0.25
             timer = Timer.scheduledTimer(timeInterval: speed, target: self, selector: #selector(rescheduleTimer), userInfo: nil, repeats: true)
         }
+        if counter > 100
+        {
+            timer.invalidate()
+            speed = 0.15
+            timer = Timer.scheduledTimer(timeInterval: speed, target: self, selector: #selector(rescheduleTimer), userInfo: nil, repeats: true)
+        }
         if self.bcount == 5
         {
             timer.invalidate()
-//            self.llose.alpha = 1
-//            self.llose.bringSubviewToFront(self.llose)
-//            let Button2 = UIButton (frame: CGRect(x: 155, y: 500, width: 100, height: 100))
-//            Button2.setTitle("reset", for: .normal)
-//            Button2.backgroundColor = UIColor.red
-//            view.addSubview(Button2)
-//            Button2.addTarget(self, action: #selector(restbutton), for: .touchUpInside)
+
             for btn in Button1a
             {
                 crash += 1
@@ -165,34 +203,34 @@ print(bcount)
             }
            
            
-            if counter >= highscore
+            if counter >= highscore2
        {
-        highscore = counter
+        highscore2 = counter
        saveFromUserDefaults()
         
        }
-            performSegue(withIdentifier: "gameOverSegue", sender: self)
+            performSegue(withIdentifier: "gameOverSegue2", sender: self)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if (segue.identifier == "gameOverSegue")
+            if (segue.identifier == "gameOverSegue2")
             {
-                let scoreseg = segue.destination as! Gameover
-                scoreseg.scoresave = counter
+                let scoreseg = segue.destination as! HardLose
+                scoreseg.scoresave2 = counter
             }
     }
     
     
     func loadFromUserDefaults(){
         let defaults = UserDefaults.standard
-        highscore = defaults.integer(forKey: "finaly")
+        highscore2 = defaults.integer(forKey: "finaly2")
         
     }
     
     
     func saveFromUserDefaults(){
         let defaults = UserDefaults.standard
-        defaults.setValue(highscore, forKey: "finaly")
+        defaults.setValue(highscore2, forKey: "finaly2")
     }
     func addconst()
     {
@@ -206,17 +244,15 @@ print(bcount)
         NSLayoutConstraint.activate(constr)
     }
     
-    
-    
-//    func saveToUserDefaults()
-//    {
-//        defaults.setValue(highscore, forKey: "finaly")
-//    }
-//
-//    func loadFromUserDefaults()
-//    {
-//        let finaly = defaults.integer(forKey: "finaly")//look at this
-//    }
-}
 
-//user defaults for high score
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
